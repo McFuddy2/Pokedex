@@ -11,9 +11,10 @@ import (
 func startRepl(cnfg *config) {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("Hello, and welcome to your Pokedex! My name is Puffluff your AI assistant! but you can call me Puff!")
+	fmt.Println("Go ahead and type a command! if you want a list of options try 'help'.")
 
 	for {
-		fmt.Print("pokedex > ")
+		fmt.Print("\n \n pokedex > ")
 		
 		scanner.Scan()
 		
@@ -43,39 +44,8 @@ func startRepl(cnfg *config) {
 			fmt.Println(err)
 		}
 		
-		/*
-		case "map":
-			locations, newConfig, err := fetchLocations(config, "next")
-			if err != nil {
-				fmt.Println("Error fetching locations:", err)
-			} else {
-				displayLocations(locations)
-				config = newConfig
-			}
-		case "mapb":
-			locations, newConfig, err := fetchLocations(config, "previous")
-			if err != nil {
-				fmt.Println("Error fetching locations:", err)
-			} else {
-				displayLocations(locations)
-				config = newConfig
-			}
-			/*
-		case "explore":
-			fmt.Print("Enter location area name: ")
-			if scanner.Scan() {
-				areaName := scanner.Text()
-				exploreCommand(areaName)
-			}
-			*/ 
-
-		
-	
-
 	}
 }
-
-
 
 type cliCommand struct {
 	name string
@@ -119,6 +89,31 @@ func getCommands() map[string]cliCommand {
 			name: "explore {location_area}",
 			description: "I will check out the area and tell you what kinds of pokemon you can find here!",
 			callback: callbackExplore,
+		},
+		"hunt":{
+			name: "hunt {location_area}",
+			description: "We can try our luck at adding a new friend to our collection!",
+			callback: callbackHunt,
+		},
+		"inspect":{
+			name: "inspect {pokemon_name}",
+			description: "Once we have caught a Pokemon I can tell you all kinds of eciting information about it!",
+			callback: callbackInspect,
+		},
+		"catalog":{
+			name: "catalog",
+			description: "I can show you a list of Pokemon we have caught and that you can now inspect!",
+			callback: callbackCatalog,
+		},
+		"save":{
+			name: "save {file_name}",
+			description: "I can save all the pokemon you have caught so that you can return and keep hunting!",
+			callback: callbackSave,
+		},
+		"load":{
+			name: "load {file_name}",
+			description: "Oh! I might have a list of all the Pokemon you have caught before. We can start from there!",
+			callback: callbackLoad,
 		},
 	}
 }
