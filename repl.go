@@ -92,7 +92,7 @@ func getCommands() map[string]cliCommand {
 		},
 		"hunt":{
 			name: "hunt {location_area}",
-			description: "We can try our luck at adding a new friend to our collection!",
+			description: "We can try our luck at finding a new friend to add to our collection!",
 			callback: callbackHunt,
 		},
 		"inspect":{
