@@ -123,3 +123,13 @@ func cleanInput(str string) []string {
 	words := strings.Fields(loweredString)
 	return words
 }
+
+
+
+
+
+// Catch Pokémon and sell them for cash to buy better pokeballs
+// Buy training lessons for Pokémon to have them level up, and evolve.
+// Change catch mechanic to be harder.
+// Inspect details for seen vs caught
+// Inspect details on odds to catch a Pokémon with certain pokeballs.
