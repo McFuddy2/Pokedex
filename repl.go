@@ -10,8 +10,26 @@ import (
 
 func startRepl(cnfg *config) {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Hello, and welcome to your Pokedex! My name is Puffluff your AI assistant! but you can call me Puff!")
-	fmt.Println("Go ahead and type a command! if you want a list of options try 'help'.")
+	art := `
+	░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗  ████████╗░█████╗░  ██╗░░░██╗░█████╗░██╗░░░██╗██████╗░
+	░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝  ╚══██╔══╝██╔══██╗  ╚██╗░██╔╝██╔══██╗██║░░░██║██╔══██╗
+	░╚██╗████╗██╔╝█████╗░░██║░░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░  ░░░██║░░░██║░░██║  ░╚████╔╝░██║░░██║██║░░░██║██████╔╝
+	░░████╔═████║░██╔══╝░░██║░░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░  ░░░██║░░░██║░░██║  ░░╚██╔╝░░██║░░██║██║░░░██║██╔══██╗
+	░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗  ░░░██║░░░╚█████╔╝  ░░░██║░░░╚█████╔╝╚██████╔╝██║░░██║
+	░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝  ░░░╚═╝░░░░╚════╝░  ░░░╚═╝░░░░╚════╝░░╚═════╝░╚═╝░░╚═╝
+
+					██████╗░░█████╗░██╗░░██╗███████╗██████╗░███████╗██╗░░██╗██╗
+					██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔════╝╚██╗██╔╝██║
+					██████╔╝██║░░██║█████═╝░█████╗░░██║░░██║█████╗░░░╚███╔╝░██║
+					██╔═══╝░██║░░██║██╔═██╗░██╔══╝░░██║░░██║██╔══╝░░░██╔██╗░╚═╝
+					██║░░░░░╚█████╔╝██║░╚██╗███████╗██████╔╝███████╗██╔╝╚██╗██╗
+					╚═╝░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝
+		`
+    fmt.Println(art)
+
+	fmt.Println("				      My name is Puffluff your AI assistant! but you can call me Puff!")
+
+	fmt.Println("				  Go ahead and type a command! if you want a list of options try 'help'.")
 
 	for {
 		fmt.Print("\n \n pokedex > ")
@@ -133,3 +151,4 @@ func cleanInput(str string) []string {
 // Change catch mechanic to be harder.
 // Inspect details for seen vs caught
 // Inspect details on odds to catch a Pokémon with certain pokeballs.
+// Catalog should be in pkmn # order, it should also display stats (x pokemon caught)
